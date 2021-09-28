@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Controllers;
 
@@ -7,11 +7,13 @@ use Symfony\Component\Routing\RouteCollection;
 
 class PageController
 {
-    // Homepage action
+	// Homepage action
 	public function indexAction(RouteCollection $routes)
 	{
-		$routeToProduct = str_replace('{id}', 1, $routes->get('product')->getPath());
+		$routeToProducts = str_replace('{id}', 1, $routes->get('products')->getPath());
+		$routeToUsers = str_replace('{id}', 1, $routes->get('users')->getPath());
+		$routeToCustomers = str_replace('{id}', 1, $routes->get('customers')->getPath());
 
-        require_once APP_ROOT . '/views/home.php';
+		require_once APP_ROOT . '/views/home.php';
 	}
 }
